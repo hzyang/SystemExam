@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录页面</title>
+<link href="resources/css/bootstrap.min.css" type="text/css"
+	rel="stylesheet" />
+<style type="text/css">
+body {
+	body { padding-top:70px;  }
+}
+</style>
+
+
+</head>
+<body style="background-image: url(resources/image/girs4.png);background-repeat: no-repeat;background-position: 10% 5% 5% 5%">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">后台管理系统</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-bavbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a class="navbar-brand" href="view/addNewUser.html">管理员注册</a></li>
+				<li><a class="navbar-brand" href="#">关于我们</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container" style="margin-top: 17%;margin-left:25%;padding-left: 15%; ">
+		<form role="form" class="form-inline"
+			action="<%=request.getContextPath()%>/login" method="get">
+			<h3>后台管理系统</h3>
+			<div class="form-group">
+
+				<label>用户名：</label> <input type="text" class="form-control"
+					name="userName" size="20">
+			</div>
+			<br/>
+			<div class="form-group" style="margin-top: 15px">
+				<label> 密&nbsp;码：</label> <input type="password" class="form-control"
+					name="userPassword" size="20">
+			</div>
+			<br/>
+			<div class="form-group" style="margin-top: 15px">
+				<input type="submit" class="form-control" value="登录">
+
+			</div>
+			<div class="form-group" style="margin-top: 15px;margin-left: 5%;">
+				<input type="reset" class="form-control" value="重置">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

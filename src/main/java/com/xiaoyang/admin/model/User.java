@@ -1,4 +1,4 @@
-package com.xiaoyang.model;
+package com.xiaoyang.admin.model;
 
 import java.util.Date;
 

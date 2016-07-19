@@ -1,6 +1,6 @@
-package com.xiaoyang.mapper;
+package com.xiaoyang.admin.mapper;
 
-import com.xiaoyang.model.User;
+import com.xiaoyang.admin.model.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

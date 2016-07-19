@@ -29,18 +29,18 @@
     </javaTypeResolver>
 
     <!-- 数据表对应的model 层  -->
-    <javaModelGenerator targetPackage="com.xiaoyang.model" targetProject="SystemExam/src/main/java/">
+    <javaModelGenerator targetPackage="com.xiaoyang.admin.model" targetProject="SystemExam/src/main/java/">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
     <!-- sql mapper 生成映射文件存放位置 -->
-    <sqlMapGenerator targetPackage="com.xiaoyang.mapper"  targetProject="SystemExam/src/main/resources">
+    <sqlMapGenerator targetPackage="com.xiaoyang.admin.mapper"  targetProject="SystemExam/src/main/resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
     <!-- 在ibatis2 中是dao层，但在mybatis3中，其实就是mapper接口 -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoyang.mapper"  targetProject="SystemExam/src/main/java/">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoyang.admin.mapper"  targetProject="SystemExam/src/main/java/">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
