@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoyang.admin.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoyang.admin.model.SysUser">
+    <id column="USER_ID" jdbcType="INTEGER" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_TYPE" jdbcType="VARCHAR" property="userType" />
+    <result column="LEVEL_ID" jdbcType="INTEGER" property="levelId" />
+    <result column="USER_SEX" jdbcType="VARCHAR" property="userSex" />
+    <result column="USER_AGE" jdbcType="INTEGER" property="userAge" />
+    <result column="USER_PHONE" jdbcType="INTEGER" property="userPhone" />
+    <result column="USER_STATUS" jdbcType="VARCHAR" property="userStatus" />
+    <result column="USER_ADDRESS" jdbcType="VARCHAR" property="userAddress" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="COMPANY_ID" jdbcType="INTEGER" property="companyId" />
+    <result column="ROW_VERSION_NUMBER" jdbcType="INTEGER" property="rowVersionNumber" />
+    <result column="CREATION_DATE" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="CREATED_BY" jdbcType="INTEGER" property="createdBy" />
+    <result column="LAST_UPDATED_BY" jdbcType="INTEGER" property="lastUpdatedBy" />
+    <result column="LAST_UPDATE_DATE" jdbcType="TIMESTAMP" property="lastUpdateDate" />
+    <result column="LAST_UPDATE_LOGIN" jdbcType="INTEGER" property="lastUpdateLogin" />
+    <result column="ATTRIBUTE_CATEGORY" jdbcType="VARCHAR" property="attributeCategory" />
+    <result column="ATTRIBUTE1" jdbcType="VARCHAR" property="attribute1" />
+    <result column="ATTRIBUTE2" jdbcType="VARCHAR" property="attribute2" />
+    <result column="ATTRIBUTE3" jdbcType="VARCHAR" property="attribute3" />
+    <result column="ATTRIBUTE4" jdbcType="VARCHAR" property="attribute4" />
+    <result column="ATTRIBUTE5" jdbcType="VARCHAR" property="attribute5" />
+    <result column="ATTRIBUTE6" jdbcType="VARCHAR" property="attribute6" />
+    <result column="ATTRIBUTE7" jdbcType="VARCHAR" property="attribute7" />
+    <result column="ATTRIBUTE8" jdbcType="VARCHAR" property="attribute8" />
+    <result column="ATTRIBUTE9" jdbcType="VARCHAR" property="attribute9" />
+    <result column="ATTRIBUTE10" jdbcType="VARCHAR" property="attribute10" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USER_NAME, USER_TYPE, LEVEL_ID, USER_SEX, USER_AGE, USER_PHONE, USER_STATUS, 
+    USER_ADDRESS, USER_CODE, COMPANY_ID, ROW_VERSION_NUMBER, CREATION_DATE, CREATED_BY, 
+    LAST_UPDATED_BY, LAST_UPDATE_DATE, LAST_UPDATE_LOGIN, ATTRIBUTE_CATEGORY, ATTRIBUTE1, 
+    ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6, ATTRIBUTE7, ATTRIBUTE8, 
+    ATTRIBUTE9, ATTRIBUTE10
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoyang.admin.model.SysUser">
+    insert into sys_user (USER_ID, USER_NAME, USER_TYPE, 
+      LEVEL_ID, USER_SEX, USER_AGE, 
+      USER_PHONE, USER_STATUS, USER_ADDRESS, 
+      USER_CODE, COMPANY_ID, ROW_VERSION_NUMBER, 
+      CREATION_DATE, CREATED_BY, LAST_UPDATED_BY, 
+      LAST_UPDATE_DATE, LAST_UPDATE_LOGIN, ATTRIBUTE_CATEGORY, 
+      ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
+      ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6, 
+      ATTRIBUTE7, ATTRIBUTE8, ATTRIBUTE9, 
+      ATTRIBUTE10)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, 
+      #{levelId,jdbcType=INTEGER}, #{userSex,jdbcType=VARCHAR}, #{userAge,jdbcType=INTEGER}, 
+      #{userPhone,jdbcType=INTEGER}, #{userStatus,jdbcType=VARCHAR}, #{userAddress,jdbcType=VARCHAR}, 
+      #{userCode,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER}, #{rowVersionNumber,jdbcType=INTEGER}, 
+      #{creationDate,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=INTEGER}, #{lastUpdatedBy,jdbcType=INTEGER}, 
+      #{lastUpdateDate,jdbcType=TIMESTAMP}, #{lastUpdateLogin,jdbcType=INTEGER}, #{attributeCategory,jdbcType=VARCHAR}, 
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
+      #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}, 
+      #{attribute7,jdbcType=VARCHAR}, #{attribute8,jdbcType=VARCHAR}, #{attribute9,jdbcType=VARCHAR}, 
+      #{attribute10,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoyang.admin.model.SysUser">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="levelId != null">
+        LEVEL_ID,
+      </if>
+      <if test="userSex != null">
+        USER_SEX,
+      </if>
+      <if test="userAge != null">
+        USER_AGE,
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE,
+      </if>
+      <if test="userStatus != null">
+        USER_STATUS,
+      </if>
+      <if test="userAddress != null">
+        USER_ADDRESS,
+      </if>
+      <if test="userCode != null">
+        USER_CODE,
+      </if>
+      <if test="companyId != null">
+        COMPANY_ID,
+      </if>
+      <if test="rowVersionNumber != null">
+        ROW_VERSION_NUMBER,
+      </if>
+      <if test="creationDate != null">
+        CREATION_DATE,
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY,
+      </if>
+      <if test="lastUpdatedBy != null">
+        LAST_UPDATED_BY,
+      </if>
+      <if test="lastUpdateDate != null">
+        LAST_UPDATE_DATE,
+      </if>
+      <if test="lastUpdateLogin != null">
+        LAST_UPDATE_LOGIN,
+      </if>
+      <if test="attributeCategory != null">
+        ATTRIBUTE_CATEGORY,
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6,
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7,
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8,
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9,
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="levelId != null">
+        #{levelId,jdbcType=INTEGER},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddress != null">
+        #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="rowVersionNumber != null">
+        #{rowVersionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="creationDate != null">
+        #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdatedBy != null">
+        #{lastUpdatedBy,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateDate != null">
+        #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateLogin != null">
+        #{lastUpdateLogin,jdbcType=INTEGER},
+      </if>
+      <if test="attributeCategory != null">
+        #{attributeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null">
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyang.admin.model.SysUser">
+    update sys_user
+    <set>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="levelId != null">
+        LEVEL_ID = #{levelId,jdbcType=INTEGER},
+      </if>
+      <if test="userSex != null">
+        USER_SEX = #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        USER_AGE = #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE = #{userPhone,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        USER_STATUS = #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddress != null">
+        USER_ADDRESS = #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null">
+        USER_CODE = #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        COMPANY_ID = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="rowVersionNumber != null">
+        ROW_VERSION_NUMBER = #{rowVersionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="creationDate != null">
+        CREATION_DATE = #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY = #{createdBy,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdatedBy != null">
+        LAST_UPDATED_BY = #{lastUpdatedBy,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateDate != null">
+        LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateLogin != null">
+        LAST_UPDATE_LOGIN = #{lastUpdateLogin,jdbcType=INTEGER},
+      </if>
+      <if test="attributeCategory != null">
+        ATTRIBUTE_CATEGORY = #{attributeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoyang.admin.model.SysUser">
+    update sys_user
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_TYPE = #{userType,jdbcType=VARCHAR},
+      LEVEL_ID = #{levelId,jdbcType=INTEGER},
+      USER_SEX = #{userSex,jdbcType=VARCHAR},
+      USER_AGE = #{userAge,jdbcType=INTEGER},
+      USER_PHONE = #{userPhone,jdbcType=INTEGER},
+      USER_STATUS = #{userStatus,jdbcType=VARCHAR},
+      USER_ADDRESS = #{userAddress,jdbcType=VARCHAR},
+      USER_CODE = #{userCode,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=INTEGER},
+      ROW_VERSION_NUMBER = #{rowVersionNumber,jdbcType=INTEGER},
+      CREATION_DATE = #{creationDate,jdbcType=TIMESTAMP},
+      CREATED_BY = #{createdBy,jdbcType=INTEGER},
+      LAST_UPDATED_BY = #{lastUpdatedBy,jdbcType=INTEGER},
+      LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      LAST_UPDATE_LOGIN = #{lastUpdateLogin,jdbcType=INTEGER},
+      ATTRIBUTE_CATEGORY = #{attributeCategory,jdbcType=VARCHAR},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

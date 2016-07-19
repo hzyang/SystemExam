@@ -19,7 +19,7 @@
 
     <!-- 数据库连接 -->
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://localhost:3306/autocontrollerstest?characterEncoding=utf8"
+        connectionURL="jdbc:mysql://localhost:3306/xiaoyanga_db?characterEncoding=utf8"
         userId="root"
         password="">
     </jdbcConnection>
@@ -45,7 +45,7 @@
     </javaClientGenerator>
 
     <!-- 要对那些数据表进行生成操作，必须要有一个. -->
-    <table schema="mybatis" tableName="user" domainObjectName="User" 
+    <table schema="mybatis" tableName="sys_account" domainObjectName="SysAccount" 
         enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false">     

@@ -1,6 +1,7 @@
 package com.xiaoyang.admin.service;
 
-import com.xiaoyang.admin.model.User;
+import com.xiaoyang.admin.exception.UserException;
+import com.xiaoyang.admin.model.SysUser;
 
 /**
  * 
@@ -21,5 +22,5 @@ public interface UserService {
      * @throws Exception
      *          异常处理
      */
-    int insert(User user) throws Exception;
+    int insert(SysUser sysUser) throws UserException;
 }
