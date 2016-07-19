@@ -21,9 +21,9 @@ import com.xiaoyang.base.controllers.BaseController;
  * @author zyhe
  *
  */
-/*@Controller
-@RequestMapping*/
-public class SysUserController extends BaseController {
+@Controller
+@RequestMapping
+public class SysUserController {
 
     @Autowired
     private UserService userService;
@@ -39,7 +39,7 @@ public class SysUserController extends BaseController {
      * @throws UserException
      *             用户统一异常
      */
-  /*  @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     @ResponseBody
     public String insert(HttpServletRequest request, @RequestBody SysUser sysUser, Model model) throws UserException {
         int flag = userService.insert(sysUser);
@@ -50,6 +50,6 @@ public class SysUserController extends BaseController {
             return "error";
         }
 
-    }*/
+    }
 
 }

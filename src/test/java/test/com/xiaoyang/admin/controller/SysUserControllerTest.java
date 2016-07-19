@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.annotation.Rollback;
 
 import com.xiaoyang.admin.exception.UserException;
 import com.xiaoyang.admin.model.SysUser;
@@ -35,6 +36,7 @@ public class SysUserControllerTest {
 
     
     @Test
+    @Rollback(true)
     public void test() throws UserException{
         SysUser sysUser = new SysUser();
         sysUser.setUserName("admin");
