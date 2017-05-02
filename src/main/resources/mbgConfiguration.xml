@@ -7,7 +7,7 @@
 
   <!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
   <!-- <classPathEntry location="D:\Work\Java\eclipse\workspace\myBatisGenerator\WebContent\WEB-INF\lib\mysql-connector-java-5.1.22-bin.jar" /> -->
-<classPathEntry location="C:/Users/zyhe/.m2/repository/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34.jar"/> 
+<classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.30/mysql-connector-java-5.1.30.jar"/> 
   <context id="autocontrollerstest_mysql_tables" targetRuntime="MyBatis3">
 
     <!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
@@ -19,9 +19,9 @@
 
     <!-- 数据库连接 -->
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://localhost:3306/xiaoyanga_db?characterEncoding=utf8"
-        userId="root"
-        password="">
+        connectionURL="jdbc:mysql://localhost:3306/myapp?characterEncoding=utf8"
+        userId="uat"
+        password="uat">
     </jdbcConnection>
 
     <javaTypeResolver >
@@ -45,7 +45,7 @@
     </javaClientGenerator>
 
     <!-- 要对那些数据表进行生成操作，必须要有一个. -->
-    <table schema="mybatis" tableName="sys_account" domainObjectName="SysAccount" 
+    <table schema="mybatis" tableName="sys_use" domainObjectName="SysUse" 
         enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false">     

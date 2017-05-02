@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.xiaoyang.admin.exception.UserException;
 import com.xiaoyang.admin.model.SysUser;
 import com.xiaoyang.admin.service.UserService;
-import com.xiaoyang.base.controllers.BaseController;
 
 /**
  * 用户信息Controller.
